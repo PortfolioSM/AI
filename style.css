@@ -724,21 +724,13 @@ section { padding: clamp(64px, 8vw, 108px) 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: none;
   filter: grayscale(1) contrast(.96) brightness(.88);
-  animation: teamLoop 7s ease-in-out infinite;
-  transition: transform .7s var(--ease);
-  will-change: filter;
-}
-.team-grid .team-card:nth-child(2) .team-photo img { animation-delay: 1.75s; }
-.team-grid .team-card:nth-child(3) .team-photo img { animation-delay: 3.5s; }
-.team-grid .team-card:nth-child(4) .team-photo img { animation-delay: 5.25s; }
-@keyframes teamLoop {
-  0%, 100% { filter: grayscale(1) contrast(.96) brightness(.88); }
-  50%      { filter: grayscale(0) contrast(1.03) brightness(1); }
+  transition: filter .35s ease, transform .35s ease;
+  will-change: filter, transform;
 }
 .team-card:hover .team-photo img,
 .team-card:focus-within .team-photo img {
-  animation-play-state: paused;
   filter: grayscale(0) contrast(1.03) brightness(1) !important;
   transform: scale(1.06);
 }
@@ -1056,7 +1048,9 @@ footer nav a:hover { color: #fff; }
   .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .team-card { padding: 10px 10px 20px; }
   .team-card h3 { font-size: 21px; }
-  .team-photo img { animation: none; filter: none; transform: none; }
+  .team-photo img { animation: none; filter: grayscale(1) contrast(.96) brightness(.88); transform: none; transition: filter .35s ease, transform .35s ease; }
+  .team-card:hover .team-photo img,
+  .team-card:focus-within .team-photo img { filter: grayscale(0) contrast(1.03) brightness(1) !important; transform: scale(1.02); }
   .contact-actions { grid-template-columns: 1fr; }
   .map-btn {
     left: 14px;
