@@ -60,7 +60,7 @@ p { margin: 0; }
   margin-bottom: 13px;
   color: var(--neon-bright);
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -272,25 +272,25 @@ p { margin: 0; }
   position: relative;
   display: grid;
   place-items: center;
-  width: min(510px, 100%);
+  width: min(600px, 100%);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(217,26,42,.18), transparent 64%);
+  background: radial-gradient(circle at center, rgba(217,26,42,.28) 0%, rgba(217,26,42,.14) 15%, transparent 24%);
 }
 .hero-orb::before {
   content: "";
   position: absolute;
-  inset: 7%;
+  inset: 12%;
   border-radius: 50%;
-  background: rgba(0,0,0,.14);
-  box-shadow: 0 0 90px rgba(217,26,42,.25);
+  background: rgba(0,0,0,.18);
+  box-shadow: 0 0 46px 4px rgba(217,26,42,.24);
 }
 .hero-orb img {
   position: relative;
   z-index: 1;
-  width: min(420px, 82%);
+  width: min(460px, 72%);
   border-radius: 50%;
-  filter: drop-shadow(0 0 30px rgba(217,26,42,.45)) drop-shadow(0 0 80px rgba(217,26,42,.25));
+  filter: drop-shadow(0 0 26px rgba(217,26,42,.45)) drop-shadow(0 0 56px rgba(217,26,42,.22));
 }
 .hero-facts {
   width: min(520px, 100%);
@@ -622,50 +622,65 @@ section { padding: clamp(64px, 8vw, 108px) 0; }
   margin-top: 8px;
   color: #fff;
   font-family: var(--display);
-  font-size: clamp(14px, 1.3vw, 16px);
-  line-height: 1.15;
+<<<<<<< HEAD
+  font-size: clamp(17px, 2vw, 10px);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  white-space: normal;
   overflow-wrap: anywhere;
-}
-.course-list { color: var(--muted-d); }
-.course-side {
-  display: grid;
-  gap: 18px;
-}
-.course-video {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line-d);
-  border-radius: 18px;
-  background: #050506;
-}
-.course-video video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  opacity: .86;
-}
-.video-caption {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  padding: 7px 10px;
-  border: 1px solid var(--line-d);
-  border-radius: 999px;
-  background: rgba(8,8,9,.68);
-  color: var(--muted-d);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-.course {
-  display: grid;
-  gap: 12px;
-  padding: clamp(22px, 4vw, 32px);
-  border: 1px solid var(--line-d);
-  border-radius: 18px;
-  background: var(--ink-3);
-}
+  word-break: break-word;
+=======
+  font-size: clamp(17px, 2vw, 10px);
+   .team-card {
+     display: grid;
+     grid-template-rows: auto 1fr auto auto;
+     min-height: 320px;
+     padding: 0;
+     border: 1px solid var(--line-d);
+     border-radius: 18px;
+     background: var(--ink-3);
+     overflow: hidden;
+     transition: transform .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
+   }
+   .team-card:hover { transform: translateY(-4px); border-color: rgba(217,26,42,.55); background: rgba(17,17,19,.94); }
+   .team-photo {
+     position: relative;
+     width: 100%;
+     aspect-ratio: 4 / 3;
+     overflow: hidden;
+     background: #000;
+   }
+   .team-photo img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     filter: grayscale(100%) contrast(1.05) brightness(0.8);
+     transition: filter .35s ease, transform .35s ease;
+   }
+   .team-card:hover .team-photo img {
+     filter: grayscale(0%) contrast(1.05) brightness(1);
+     transform: scale(1.02);
+   }
+   .team-card > span {
+     display: grid;
+     place-items: center;
+     width: 58px;
+     height: 58px;
+     margin: 22px 24px 16px;
+     border: 1px solid var(--neon);
+     border-radius: 50%;
+     color: var(--neon-bright);
+     font-family: var(--display);
+     font-size: 25px;
+     font-weight: 800;
+   }
+   .team-card h3 {
+     font-size: 25px;
+     margin: 0 24px 6px;
+   }
+   .team-card p {
+     margin: 0 24px 22px;
 .course label {
   color: var(--muted-d);
   font-family: var(--mono);
@@ -705,6 +720,7 @@ section { padding: clamp(64px, 8vw, 108px) 0; }
   gap: 16px;
 }
 .team-card {
+<<<<<<< HEAD
   padding: 14px 14px 26px;
   border: 1px solid var(--line-d);
   border-radius: 18px;
@@ -749,8 +765,58 @@ section { padding: clamp(64px, 8vw, 108px) 0; }
 }
 .team-card h3 { font-size: 25px; padding: 0 8px; }
 .team-card p {
-  margin-top: 5px;
-  padding: 0 8px;
+  margin: 0 24px 22px;
+=======
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 320px;
+  padding: 0;
+  border: 1px solid var(--line-d);
+  border-radius: 18px;
+  background: var(--ink-3);
+  overflow: hidden;
+  transition: transform .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
+}
+.team-card:hover { transform: translateY(-4px); border-color: rgba(217,26,42,.55); background: rgba(17,17,19,.94); }
+.team-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #000;
+}
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(1.05) brightness(0.8);
+  transition: filter .35s ease, transform .35s ease;
+}
+.team-card:hover .team-photo img {
+  filter: grayscale(0%) contrast(1.05) brightness(1);
+  transform: scale(1.02);
+}
+.team-card > span {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 22px 24px 16px;
+  border: 1px solid var(--neon);
+  border-radius: 50%;
+  color: var(--neon-bright);
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 800;
+}
+.team-card h3 {
+  font-size: 25px;
+  margin: 0 24px 6px;
+}
+.team-card p {
+  margin: 0 24px 22px;
+>>>>>>> 9bf8926 (Poprawki stylu: hover zdjęć zespołu, wyrównanie kart i poświata)
   color: var(--muted-d);
   font-family: var(--mono);
   font-size: 11px;
@@ -758,6 +824,7 @@ section { padding: clamp(64px, 8vw, 108px) 0; }
   text-transform: uppercase;
 }
 .team-card a {
+  margin: 0 24px 24px;
   display: inline-flex;
   margin-top: 22px;
   padding: 0 8px;
