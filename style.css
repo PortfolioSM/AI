@@ -114,11 +114,17 @@ p { margin: 0; }
   transition: background .25s, backdrop-filter .25s, border-color .25s, padding .25s;
 }
 .nav.scrolled {
-  background: rgba(8,8,9,.86);
-  backdrop-filter: blur(16px);
   border-bottom-color: var(--line-d);
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.nav.scrolled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(8,8,9,.86);
+  backdrop-filter: blur(16px);
 }
 .brand {
   display: inline-flex;
